@@ -1,0 +1,48 @@
+{% extends 'teste.html'%}
+{% block content %}
+
+<main class="px-3">
+  <div class="   col-md-6 offset-md-3">
+    <h1>CADASTRE A SUA ENTIDADE</h1>
+    <p class="lead">Para se cadastrar é fácil, insira as informações a baixo: </p>
+  </div>
+</main>
+<div class=" col-md-4 offset-md-3">
+<form action="" method="POST">
+  <h4>Dados</h4>
+  <div class="form-group">
+    <label>Nome</label>
+    {{ form.nome(class="form-control", placeholder="seu_usuario")}}
+  </div>
+  <div class="form-group">
+      <label class="text-secondary">CNPJ </label>
+      {{ form.cnpj(class="form-control", placeholder="cnpj")}}
+    </div>
+    <div class="form-group">
+      <label>Sobre</label>
+      {{ form.sobre(class="form-control", placeholder="fale um pouco sobre a entidade")}}
+    </div>
+  <div class="row mt-3">
+  <h4>Endereço</h4>
+  <div class="form-group">
+    <label>Rua</label>
+    {{ form.rua(class="form-control", placeholder="rua exemplo, n 123")}}
+  </div>
+  <div class="form-group">
+    <label>Bairro</label>
+    {{ form.bairro(class="form-control", placeholder="Bairro exemplo")}}
+  </div>
+  <div class="form-group">
+    <label>Cidade</label>
+    {{ form.cidade(class="form-control", placeholder="Qual a cidade?")}}
+  </div>
+  <div class="form-group">
+    <label>CEP</label>
+    {{ form.cep(class="form-control", placeholder="Informe o CEP")}}
+  </div>
+  </div>
+  
+
+</form>
+</div>
+{% endblock %}
