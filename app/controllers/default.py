@@ -34,6 +34,5 @@ def cadastre():
 
 @app.route('/teste', methods=["POST", "GET"])
 def teste():
-    r = entity.query.all()
-    print(r)
-    return "OK"
+    entidades = entity.query.all()
+    return render_template("lista.html", entidades=entidades)
