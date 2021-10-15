@@ -30,7 +30,7 @@ def cadastre():
         entidade = entity(nome, cnpj, rua, bairro, cidade, cep, sobre)
         db.session.add(entidade)
         db.session.commit()
-    return render_template('cadastro.html', form=form)
+    return render_template('cadastre.html', form=form)
 
 @app.route('/entidades', methods=["POST", "GET"])
 def entidades():
