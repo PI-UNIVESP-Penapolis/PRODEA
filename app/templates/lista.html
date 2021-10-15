@@ -2,8 +2,8 @@
 
 {% block content %}
 <main class="px-3">
-    <div class="   col-md-6 offset-md-3">
-      <h1>ENTIDADES CADASTRADAS</h1>
+    <div class="col-md-12 offset-md-3">
+      <h1 class="display-5">ENTIDADES CADASTRADAS</h1>
       <p class="lead"> </p>
     </div>
 </main>
@@ -11,15 +11,15 @@
 </div>
 {% for entity in entidades %}
 
-<div class="p-2 mb-5 bg-dark rounded-3">
-    <div class="container-fluid py-1 ">
-        <h5 class="display-5 fw-bold text-white">{{ entity.nome }}</h5>
-        <p class="col-md-8 fs-4 text-white">Endereço: {{ entity.rua}}, {{entity.bairro}}, {{entity.cidade}}</p>
-        <p class="col-md-8 fs-4 text-white">E-mail: entidade_exemplo@hotmail.com</p>
-        <p class="col-md-8 fs-4 text-white">Sobre: {{entity.sobre}}</p></p>
-        
+    <div class="p-2 mb-3 bg-light rounded-3">
+        <div class="container-fluid py-1 ">
+            <h5 class="display-7 fw-bold text-black">{{ entity.nome }}</h5>
+            <p class="col-md-8 fs-6 text-black">Endereço: {{ entity.rua}}, {{entity.bairro}}, {{entity.cidade}}</p>
+            <p class="col-md-8 fs-6 text-black">E-mail: entidade_exemplo@hotmail.com</p>
+            <p class="col-md-8 fs-6 text-black">Sobre: {{entity.sobre}}</p></p>
+            
+        </div>
     </div>
-</div>
 
 {% endfor%}
 

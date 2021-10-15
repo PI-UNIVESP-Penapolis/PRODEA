@@ -11,9 +11,7 @@ from app.models.tables import entity
 def home():
     return render_template('hometeste.html')
 
-@app.route('/entidades')
-def entidades():
-    return render_template('entidades.html')
+
 
 @app.route('/cadastre', methods=["POST", 'GET'])
 def cadastre():
@@ -32,7 +30,7 @@ def cadastre():
         db.session.commit()
     return render_template('cadastro.html', form=form)
 
-@app.route('/teste', methods=["POST", "GET"])
-def teste():
-    entidades = entity.query.all()
+@app.route('/entidades', methods=["POST", "GET"])
+def entidades():
+    entidades = entity.query.order_by(entity.cidade).all()
     return render_template("lista.html", entidades=entidades)
