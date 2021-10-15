@@ -11,7 +11,9 @@ from app.models.tables import entity
 def home():
     return render_template('hometeste.html')
 
-
+@app.route("/prodea")
+def prodea():
+    return render_template('prodea.html')
 
 @app.route('/cadastre', methods=["POST", 'GET'])
 def cadastre():

@@ -13,7 +13,7 @@
   <h4>Dados</h4>
   <div class="form-group">
     <label>Nome</label>
-    {{ form.nome(class="form-control", placeholder="seu_usuario")}}
+    {{ form.nome(class="form-control", placeholder="Nome da Entidade")}}
   </div>
   <div class="form-group">
       <label class="text-secondary">CNPJ </label>
@@ -21,7 +21,7 @@
     </div>
     <div class="form-group">
       <label>Sobre</label>
-      {{ form.sobre(class="form-control", placeholder="fale um pouco sobre a entidade")}}
+      {{ form.sobre(class="form-control", placeholder="Conte um pouco sobre o trabalho que é realizado")}}
     </div>
   <div class="row mt-3">
   <h4>Endereço</h4>
@@ -42,7 +42,8 @@
     {{ form.cep(class="form-control", placeholder="Informe o CEP")}}
   </div>
   </div>
-  <button type="submit" class="btn btn-default">Cadastrar</button>
+  <p></p>
+  <button type="submit" class="btn btn-primary">Cadastrar</button>
 
 </form>
 </div>
