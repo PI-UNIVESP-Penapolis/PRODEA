@@ -15,7 +15,7 @@ def home():
 def prodea():
     return render_template('prodea.html')
 
-@app.route('/cadastre', methods=["POST", 'GET'])
+@app.route('/cadastre', methods=["POST"])
 def cadastre():
     form = CasdastroForm()
     if form.validate_on_submit():
