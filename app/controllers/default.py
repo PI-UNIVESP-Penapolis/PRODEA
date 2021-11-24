@@ -35,4 +35,5 @@ def cadastre():
 @app.route('/entidades', methods=["POST", "GET"])
 def entidades():
     entidades = entity.query.order_by(entity.cidade).all()
+    #cidades = entidades.cidade.all()
     return render_template("lista.html", entidades=entidades)
