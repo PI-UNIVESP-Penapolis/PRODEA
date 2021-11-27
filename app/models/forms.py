@@ -14,4 +14,4 @@ class CasdastroForm(FlaskForm):
     sobre = TextField("sobre", validators=[DataRequired()])
 
 class Busca(FlaskForm):
-    entidade = StringField("entidade", validators=[DataRequired()])
+    entidade = StringField("entidade")

@@ -1,3 +1,4 @@
+from logging import NullHandler
 from flask import template_rendered
 from flask.templating import render_template
 from wtforms.fields.core import StringField
@@ -35,23 +36,10 @@ def cadastre():
 @app.route('/entidades', methods=["POST", "GET"])
 def entidades():
     busca = Busca()
-    #if pesquisa == True:
     if busca.validate_on_submit():
         entidade = busca.entidade.data
-        entidades = entity.query.filter_by(cidade=entidade).all()
-        
+        entidades = entity.query.filter_by(nome=entidade).all()
+        if entidades == []:
+            entidades = entity.query.order_by(entity.cidade).all()
         print(entidades)
-    else:
-        entidades = entity.query.order_by(entity.cidade).all()
-    #entidades = entity.query.filter_by(nome="Entidade exemplo 007").all()
-    #cidades = entidades.cidade.all()
     return render_template("lista.html", entidades=entidades, busca=busca)
-
-"""@app.route('/entidades/busca', methods= ["POST", "GET"])
-def busca():
-    busca = Busca()
-    if busca.validate_on_submit():
-        entidade = busca.entidade.data
-        entidades = entity.query.filter_by(cidade=entidade).all()
-        print(entidades)
-    return render_template("lista.html", entidades=entidades, busca=busca)"""
