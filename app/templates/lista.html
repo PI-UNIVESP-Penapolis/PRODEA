@@ -6,6 +6,16 @@
       <h1 class="display-5">ENTIDADES CADASTRADAS</h1>
       <p class="lead"> </p>
     </div>
+    <div class=" col-md-4 offset-md-3"> 
+        <form action="" method="POST">
+            {{ busca.csrf_token }}
+    <div class="form-group">
+        <label>Buscar</label>
+        {{ busca.entidade(class="form-control", placeholder="Busque uma entidade")}}
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </div>
+
+
 </main>
 <div class = "p-5">
 </div>

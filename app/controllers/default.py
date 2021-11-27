@@ -3,7 +3,7 @@ from flask.templating import render_template
 from wtforms.fields.core import StringField
 from app import app, db
 
-from  app.models.forms import CasdastroForm
+from  app.models.forms import CasdastroForm, Busca
 from app.models.tables import entity
 
 @app.route("/")
@@ -34,6 +34,24 @@ def cadastre():
 
 @app.route('/entidades', methods=["POST", "GET"])
 def entidades():
-    entidades = entity.query.order_by(entity.cidade).all()
+    busca = Busca()
+    #if pesquisa == True:
+    if busca.validate_on_submit():
+        entidade = busca.entidade.data
+        entidades = entity.query.filter_by(cidade=entidade).all()
+        
+        print(entidades)
+    else:
+        entidades = entity.query.order_by(entity.cidade).all()
+    #entidades = entity.query.filter_by(nome="Entidade exemplo 007").all()
     #cidades = entidades.cidade.all()
-    return render_template("lista.html", entidades=entidades)
+    return render_template("lista.html", entidades=entidades, busca=busca)
+
+"""@app.route('/entidades/busca', methods= ["POST", "GET"])
+def busca():
+    busca = Busca()
+    if busca.validate_on_submit():
+        entidade = busca.entidade.data
+        entidades = entity.query.filter_by(cidade=entidade).all()
+        print(entidades)
+    return render_template("lista.html", entidades=entidades, busca=busca)"""
