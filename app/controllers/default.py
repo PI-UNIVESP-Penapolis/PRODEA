@@ -41,5 +41,6 @@ def entidades():
         entidades = entity.query.filter_by(nome=entidade).all()
         if entidades == []:
             entidades = entity.query.order_by(entity.cidade).all()
-        print(entidades)
+
+    print(entidades)
     return render_template("lista.html", entidades=entidades, busca=busca)
