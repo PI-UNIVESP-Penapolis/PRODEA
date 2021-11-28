@@ -10,13 +10,8 @@
 
 </main>
 
-<div class = "p-5 col-md-4 offset-md-7">
-    <form action="" method="POST">
-        {{ busca.csrf_token }}
-<div class="input-group rounded">
-    {{ busca.entidade(type="search", class="form-control rounded", placeholder="Busque uma entidade", )}}
-    <button type="submit" class="btn btn-dark">Buscar</button>
-</div>
+<div class= "p-5">
+
 </div>
 
 {% for entity in entidades %}

@@ -35,12 +35,12 @@ def cadastre():
 
 @app.route('/entidades', methods=["POST", "GET"])
 def entidades():
-    busca = Busca()
+    """busca = Busca()
     if busca.validate_on_submit():
         entidade = busca.entidade.data
         entidades = entity.query.filter_by(nome=entidade).all()
-        if entidades == []:
-            entidades = entity.query.order_by(entity.cidade).all()
+        if entidades == []:"""
+    entidades = entity.query.order_by(entity.cidade).all()
 
     print(entidades)
-    return render_template("lista.html", entidades=entidades, busca=busca)
+    return render_template("lista.html", entidades=entidades)
